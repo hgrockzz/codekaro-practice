@@ -1,0 +1,41 @@
+*{
+    margin-top: 10px;
+}
+.box{
+    border-radius: 20px;
+    background-color: rgb(238, 255, 249);
+    margin: auto;
+    width: 450px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    height: 200px;
+    width: 320px;
+}
+
+.flat{
+    color: #a5a5a5;
+    font-size: 20px;
+}
+
+.amount{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.domestic{
+    font-weight: 600;   
+    font-size: 20px;
+}
+
+.code{
+    margin-top: 30px;
+    width: fit-content;
+    padding: 10px;
+    background-color: #dee5f0;
+    border: 3px dashed #3300ffd7;
+    border-radius: 5px;
+    font-size: 25px;
+}

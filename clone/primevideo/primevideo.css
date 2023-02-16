@@ -15,28 +15,41 @@ nav{
     z-index: +1;
     width: 100%;
     background-color: #1a242e;
+    color: aliceblue;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
-
-img{
+.nav-l{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.nav-r{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.nav-l img{
     height: 40px;
     width: 118px;
 }
-
-a{
+.nav-r img {
+    height: 25px;
+    padding: 0 10px;
+}
+nav a{
     text-decoration: none;
     font-size: 18px;
-    padding: 15px;
+    padding: 15px 10px;
     color: aliceblue;
 }
 
 .wlcm{
-    margin-top: nav-height;
     width: 100%;
     position: relative;
-    color: aliceblue
+    color: aliceblue;
 }
 
 .wlcm img{
@@ -58,20 +71,21 @@ a{
 }
 .desc{
     font-size: 20px;
-    margin: 20px 0;
     font-weight: 400;
+    margin: 10px 0;
 }
 .plan-details{
     display: block;
     text-decoration: underline;
     margin-left: 80px;
-    margin-top: -10px;
+    /* margin-top: -10px; */
+    color: aliceblue;
 }
 .plan-details:hover{
     text-decoration: none;
 }
 .wlcm-btn{
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px 15px;
     width: 300px;
     background-color: #0f79af;

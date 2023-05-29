@@ -1,5 +1,5 @@
+//-- download
 let check = 0
-
 function fn(){
     let title = document.getElementById('download-h1')
 
@@ -15,6 +15,7 @@ function fn(){
     }
 }
 
+//--show name
 function showName(){
     let name = document.getElementById('t1')
     document.getElementById('name').innerText = name.value 
@@ -22,11 +23,15 @@ function showName(){
     name.value = ''
 }
 
+//--disco mode
+var music = new Audio("Jhalak Dikhla Jaa.mp3")
 function disco(){
     let bg = document.getElementById('body')
     bg.classList.add('disco')
+    music.play()
 }
 function nodisco(){
     let bg = document.getElementById('body')
     bg.classList.remove('disco')
+    music.pause()
 }

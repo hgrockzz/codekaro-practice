@@ -21,3 +21,12 @@ function showName(){
     console.log(name.value);
     name.value = ''
 }
+
+function disco(){
+    let bg = document.getElementById('body')
+    bg.classList.add('disco')
+}
+function nodisco(){
+    let bg = document.getElementById('body')
+    bg.classList.remove('disco')
+}

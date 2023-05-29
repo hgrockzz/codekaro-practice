@@ -1,0 +1,25 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.box{
+    border: 2px solid grey ; 
+    border-radius: 4px;
+    padding: 5px 3px;
+    margin: 5px;
+}
+.content::before{
+    content: '$108';
+    font-weight: bolder;
+    font-size: larger;
+}
+.radio:focus{
+    border-color: black;
+}
+.old-price{
+    color: grey;
+    font-size: larger;
+    ;
+}
+.discount{
+    color: green;
+}

@@ -16,6 +16,8 @@ function fn(){
 }
 
 function showName(){
-   document.getElementById('name').innerText = document.getElementById('t1').value 
-   console.log(document.getElementById('t1').value);
+    let name = document.getElementById('t1')
+    document.getElementById('name').innerText = name.value 
+    console.log(name.value);
+    name.value = ''
 }

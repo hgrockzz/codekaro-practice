@@ -83,18 +83,85 @@ function print() {
   //console.log(anotherLargerNumber)
 }
 console.log(harshit)  //declared by var -> can access but undefined value
-console.log(harshit1) //declared by let -> cannot access
+//console.log(harshit1) //declared by let -> cannot access
 print()
 console.log(number)
   console.log(largerNumber)
-console.log(square)
+// console.log(square)
 
 var harshit = 77
-let harshit1 = 77
+// let harshit1 = 77
 // -- basic js practice overr
 
 //-- now js liked with html 😍
 //on p2
 
+//-- Map
+//defining array
+let a1 = [0,1,2,3,4,5,6,7,8,9]
+
+//normal function style
+function sqr(num){
+  return num*num
+}
+let res = a1.map(sqr)
+console.log(res);
+
+//arrow function style
+let res1 = a1.map((num2) => {
+  return num2 * 2
+})
+console.log(res1);
+
+let cube = a1.map((num1)=>{
+  return num1 * num1 * num1
+})
+console.log(cube);
+
+//map -> do/check something for all values 
+//--Filters (it's like an if condition -> & filters result)
+let filters = a1.filter((num) => {
+  return num > 5   //return all nums greater than 5
+})
+console.log(filters);
 
 
+//printing only even no.s of array
+//using arrow function 👇🏼
+// let even = a1.filter((num) => {
+//   return num % 2 == 0
+// })
+//make it short like this 👇🏼
+let even = a1.filter(num => num % 2 == 0)
+//bcoz if(parameter = 1) => no need of () bracket
+// & if(lines in function = 1) => no need of {} bracket 
+
+//using normal function 👇🏼
+//let even = a1.filter(function (num) {
+//   return num % 2 == 0  
+// })
+console.log(even)
+
+
+//only odd no.s of array
+console.log(a1.filter((num)=>{
+  return num % 2 == 1
+}))
+
+//mix map & filter
+//square all even no.s of array
+let chaining = a1.filter((num) => {
+  return num % 2 == 0
+}).map((x)=>{
+  return x*x
+})
+console.log(chaining)
+
+// let names = users.filter((user) => {
+//   return user.gender == 'female'
+// }).map((user) => {
+//   return user.name
+// })
+// or same thing in 1 line👇🏼
+let names = users.filter(user=> user.gender == 'female').map(user=> user.name)
+console.log(names)

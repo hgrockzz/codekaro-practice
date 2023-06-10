@@ -35,3 +35,24 @@ function nodisco(){
     bg.classList.remove('disco')
     music.pause()
 }
+
+
+//storing user details in array
+let users = []
+function register() {
+    let uName = document.getElementById('uname') 
+    let uEmail = document.getElementById('email') 
+    let tempUser = {
+        name : uName.value,
+        email : uEmail.value
+    }
+    let tmp = users.filter((user) => {
+        return user.email == tempUser.email 
+    })
+    //so email cannot be repeated
+    if(tmp.length == 0)
+        users.push(tempUser)
+    else
+        alert("this email is already registered!")    
+    console.log(users)
+}

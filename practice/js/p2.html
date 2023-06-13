@@ -16,7 +16,6 @@
 
     <h1> Welcome <span id="name"></span> </h1>
     <input type="text" id="t1" placeholder="enter your name">
-    <br>
     <button class="btn" onclick="showName()"> Submit </button>
 
     <hr>
@@ -25,11 +24,18 @@
     
     <hr>
 
-    <h2>Enter details</h2>
     <div class="flex">
-        <input type="text" id="uname" placeholder="enter name">
-        <input type="text" id="email" placeholder="enter email">
+        <div class="left-box">
+            <h2>Enter details</h2>
+            <input type="text" id="uname" placeholder="enter name">
+            <input type="text" id="email" placeholder="enter email">
+            <button class="btn" onclick="register()">Register Now</button>
+            <div id="success"></div>
+        </div>
+        <div class="right-box">
+            <h2>All Students</h2>
+            <div id="users"></div>
+        </div>
     </div>
-    <button class="btn" onclick="register()">Register Now</button>
 </body>
 </html>

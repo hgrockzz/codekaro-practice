@@ -15,9 +15,10 @@ body{
 }
 
 input{
+    display: block;
     width: 250px;
+    margin: 5px 0;
     padding: 15px;
-    margin-right: 2px;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -45,4 +46,33 @@ input{
 
 .flex{
     display: flex;
+}
+
+.left-box{
+    background-color: rgb(202, 169, 255);
+    width: 50%;
+    padding: 20px;
+    border-radius: 5px 220px 220px 5px;
+}
+.right-box{
+    width: 50%;
+    padding: 20px;
+    background-color: bisque;
+    min-height: 500px;
+    border-radius: 5px;
+}
+.users{
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    gap: 50px;
+    padding: 8px;
+    margin: 10px 0;
+}
+.success{
+    background-color: rgba(218, 255, 236, 0.861);
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 10px;
 }

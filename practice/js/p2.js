@@ -39,6 +39,26 @@ function nodisco(){
 
 //storing user details in array
 let users = []
+
+function showUser(){
+    let userList = document.getElementById('users')
+    userList.innerHTML = ''
+    
+    users.map((user) => {
+    let div = document.createElement('div')
+    let name = document.createElement('p')
+    let email = document.createElement('p')
+    div.classList.add('users','flex')
+
+    name.innerText = user.name
+    email.innerText = user.email
+
+    userList.appendChild(div)
+    div.appendChild(name)
+    div.appendChild(email)
+    })
+} 
+
 function register() {
     let uName = document.getElementById('uname') 
     let uEmail = document.getElementById('email') 
@@ -53,6 +73,9 @@ function register() {
     if(tmp.length == 0)
         users.push(tempUser)
     else
-        alert("this email is already registered!")    
+        alert("this email is already registered!")
+    
+    showUser()
+    successMsg()    
     console.log(users)
 }

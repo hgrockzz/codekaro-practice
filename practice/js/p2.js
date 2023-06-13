@@ -40,6 +40,25 @@ function nodisco(){
 //storing user details in array
 let users = []
 
+function successMsg() {
+    let box = document.getElementById('success')
+    box.classList.add('register-done','success')
+    box.innerText = "User added successfully!"
+    setTimeout(() => {
+        box.classList.remove('register-done','success')
+        box.innerText = ""
+    },2000)
+}
+function failedMsg() {
+    let box = document.getElementById('success')
+    box.classList.add('register-done','failed')
+    box.innerText = "Email already registered!"
+    setTimeout(() => {
+        box.classList.remove('register-done','failed')
+        box.innerText = ""
+    },2000)
+}
+
 function showUser(){
     let userList = document.getElementById('users')
     userList.innerHTML = ''
@@ -57,6 +76,7 @@ function showUser(){
     div.appendChild(name)
     div.appendChild(email)
     })
+    successMsg()  
 } 
 
 function register() {
@@ -70,12 +90,13 @@ function register() {
         return user.email == tempUser.email 
     })
     //so email cannot be repeated
-    if(tmp.length == 0)
+    if(tmp.length == 0){
         users.push(tempUser)
+        showUser()
+        console.log(users)
+        uName.value = ''
+        uEmail.value = ''
+    }
     else
-        alert("this email is already registered!")
-    
-    showUser()
-    successMsg()    
-    console.log(users)
+        failedMsg()
 }

@@ -70,9 +70,15 @@ input{
     padding: 8px;
     margin: 10px 0;
 }
-.success{
-    background-color: rgba(218, 255, 236, 0.861);
+
+.register-done{
     width: fit-content;
     padding: 10px 30px;
     border-radius: 10px;
+}
+.success{
+    background-color: rgba(218, 255, 236, 0.861);
+}
+.failed{
+    background-color: rgba(255, 184, 184, 0.861);
 }

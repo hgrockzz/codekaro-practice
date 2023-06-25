@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Offside&display=swap');
+
+body{
+    font-family: 'Offside', cursive;
+    background-color: #F8E6D0;
+    color: #8C1A10;
+}
+
+div{
+    text-align: center;
+    line-height: 0.6;
+    font-size: 30px;
+}
+div h1{
+    font-size: 70px;
+    font-weight: 700;
+}

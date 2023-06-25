@@ -97,6 +97,7 @@ function register() {
         uName.value = ''
         uEmail.value = ''
     }
-    else
+    else{
         failedMsg()
+    }
 }

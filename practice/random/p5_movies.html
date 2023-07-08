@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./p5_movies.css">
+    <script src="./p5_movies.js"></script>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="enter movie name" class="search" id="search">
+        <button class="btn" onclick="findMovie()">Search</button>
+    </div>
+    <div class="container" id="landing">
+        <p class="landing">Get Info About Your
+            <br>
+            <span class="highlight">Favourite Movies!</span>
+        </p>
+    </div>
+    <div class="container movie-info gayab" id="movie-info">
+        <div class="movie-text">
+            <h3 class="highlight" id="title"></h3>
+            <p id="desc"></p>
+            <p>Rating : <span id="rating"></span>⭐</p>
+            <p>Year : <span id="year"></span></p>
+            <p>Genre : <span id="genre"></span></p>
+            <p>Director : <span id="director"></span></p>
+        </div>
+        <img alt="movie poster" id="poster">
+    </div>
+</body>
+</html>

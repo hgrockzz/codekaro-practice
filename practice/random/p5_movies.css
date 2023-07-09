@@ -23,6 +23,7 @@ body {
 .btn{
     padding: 10px 30px;
     font-size: 20px;
+    font-weight: 700;
     background-color: #ffa332;
     border-radius: 0 5px 5px 0;
     border: none;
@@ -54,7 +55,27 @@ body {
 }.movie-text p{
     font-size: 20px;
 }
+.movie-poster{
+    position: relative;
+}
 .container img{
     border-radius: 10px;
     object-fit: none;
+}
+.rating{
+    position: absolute;
+    left: 0;
+    margin: 8px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    background-color: #ffa83de0;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+}
+.trailer{
+    display: inline-block;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
 }

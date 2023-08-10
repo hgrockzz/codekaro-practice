@@ -101,3 +101,41 @@ function register() {
         failedMsg()
     }
 }
+
+
+// event listener
+let eveu = document.querySelector('.evntlist');
+function kuchbhiyar(e){
+    console.log("hg");
+    console.log(e.target);
+}
+eveu.addEventListener('click', kuchbhiyar);
+
+//dark mode
+let a1 = document.querySelector('.a1');
+let a2 = document.querySelectorAll('.txt');
+let dark_mode_check = 0;
+
+function darkMode(){
+    for(i=0; i<a2.length; i++){
+        a2[i].style.color = '#fff';
+    }
+    document.querySelector('body').style.backgroundColor = '#000';
+    a1.innerText = 'Light Mode';
+    dark_mode_check = 1;
+}
+function lightMode(){
+    for(i=0; i<a2.length; i++){
+        a2[i].style.color = '#000';
+    }
+    document.querySelector('body').style.backgroundColor = '#fff';
+    a1.innerText = 'Dark Mode';
+    dark_mode_check = 0;
+}
+function checkMode(){
+    if(dark_mode_check)
+        lightMode();
+    else
+        darkMode();
+}
+a1.addEventListener('click', checkMode);

@@ -165,3 +165,11 @@ console.log(chaining)
 // or same thing in 1 line👇🏼
 let names = users.filter(user=> user.gender == 'female').map(user=> user.name)
 console.log(names)
+
+
+//foreach
+
+function renderNames(item, index){
+  console.log(item, index)
+}
+users.forEach(renderNames)

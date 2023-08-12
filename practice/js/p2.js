@@ -39,11 +39,26 @@ function nodisco(){
 
 //storing user details in array
 let users = []
+let details_entry = document.getElementById('details-entry')
+let user_info = document.getElementById('user-info')
+
+user_info.style.display = 'none'
+showUserDetails = (e) => {
+    let findUser = users.find(user => user.us_name == e.target.innerHTML)
+    document.getElementById('ud-name').innerText = findUser.name
+    document.getElementById('ud-email').innerText = findUser.email
+    user_info.style.display = 'block';
+    details_entry.style.display = 'none';
+}
+goBack = () => {
+    user_info.style.display = 'none';
+    details_entry.style.display = 'block';
+}
 
 function successMsg() {
     let box = document.getElementById('success')
     box.classList.add('register-done','success')
-    box.innerText = "User added successfully!"
+    box.innerText = "Congrats! You are our member : " + ++userCount
     setTimeout(() => {
         box.classList.remove('register-done','success')
         box.innerText = ""
@@ -52,50 +67,64 @@ function successMsg() {
 function failedMsg() {
     let box = document.getElementById('success')
     box.classList.add('register-done','failed')
-    box.innerText = "Email already registered!"
+    box.innerText = "Email/Username already registered!"
     setTimeout(() => {
         box.classList.remove('register-done','failed')
         box.innerText = ""
     },2000)
 }
 
+let userCount = 0;
 function showUser(){
     let userList = document.getElementById('users')
     userList.innerHTML = ''
     
     users.map((user) => {
     let div = document.createElement('div')
-    let name = document.createElement('p')
-    let email = document.createElement('p')
+    // let name = document.createElement('p')
+    // let email = document.createElement('p')
     div.classList.add('users','flex')
+    div.innerText = user.us_name
+    // name.innerText = user.name
+    // email.innerText = user.email
 
-    name.innerText = user.name
-    email.innerText = user.email
-
+    div.addEventListener('click', showUserDetails)
     userList.appendChild(div)
-    div.appendChild(name)
-    div.appendChild(email)
+    // div.appendChild(name)
+    // div.appendChild(email)
     })
     successMsg()  
 } 
 
 function register() {
+    let userName = document.getElementById('username')
     let uName = document.getElementById('uname') 
     let uEmail = document.getElementById('email') 
     let tempUser = {
+        us_name : userName.value,
         name : uName.value,
         email : uEmail.value
     }
-    let tmp = users.filter((user) => {
+
+    let tmp_usname = users.filter((user) => {
+        return user.us_name == tempUser.us_name 
+    })
+    let tmp_mail = users.filter((user) => {
         return user.email == tempUser.email 
     })
-    //so email cannot be repeated
-    if(tmp.length == 0){
-        users.push(tempUser)
-        showUser()
-        console.log(users)
-        uName.value = ''
-        uEmail.value = ''
+    //so email/username cannot be repeated
+    if(tmp_usname.length == 0){
+        if(tmp_mail.length == 0){
+            users.push(tempUser)
+            showUser()
+            console.log(users)
+            userName.value = ''
+            uName.value = ''
+            uEmail.value = ''
+        }
+        else{
+            failedMsg()
+        }
     }
     else{
         failedMsg()

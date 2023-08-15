@@ -39,6 +39,7 @@ function nodisco(){
 
 //storing user details in array
 let users = []
+let options = {day: 'numeric', month: 'long',year:'numeric', weekday: 'long',}
 let details_entry = document.getElementById('details-entry')
 let user_info = document.getElementById('user-info')
 
@@ -47,6 +48,8 @@ showUserDetails = (e) => {
     let findUser = users.find(user => user.us_name == e.target.innerHTML)
     document.getElementById('ud-name').innerText = findUser.name
     document.getElementById('ud-email').innerText = findUser.email
+    let formatDate = new Date(findUser.dob)
+    document.getElementById('ud-dob').innerText = formatDate.toLocaleDateString('hi', options)
     user_info.style.display = 'block';
     details_entry.style.display = 'none';
 }
@@ -100,10 +103,12 @@ function register() {
     let userName = document.getElementById('username')
     let uName = document.getElementById('uname') 
     let uEmail = document.getElementById('email') 
+    let dob = document.getElementById('dob')
     let tempUser = {
         us_name : userName.value,
         name : uName.value,
-        email : uEmail.value
+        email : uEmail.value,
+        dob : dob.value
     }
 
     let tmp_usname = users.filter((user) => {
